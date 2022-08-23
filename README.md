@@ -31,7 +31,7 @@ https://bbs.nga.cn/read.php?tid=33109101
 
 （与此同时，再次感谢 [@yohasakura](https://bbs.nga.cn/nuke.php?func=ucp&uid=51032) 版主大大，[@dtlnor](https://space.bilibili.com/1887638) 大佬，[@少年A](https://space.bilibili.com/359203633) 大佬等为怪异炼化研究做出卓越贡献的各位）
 
-根据帖子中描述的原理，可以很简单地写出模拟程序 (见本 repo 中的 qurious_entry_monte_carlo.py)，使用蒙特卡洛方法估计不同装备实际出不同词条的概率。
+根据帖子中描述的原理，可以很简单地写出模拟程序 (见本 repo 中的 [qurious_entry_monte_carlo.py](https://github.com/applepi-icpc/qurious-filling-introduction/blob/master/qurious_entry_monte_carlo.py))，使用蒙特卡洛方法估计不同装备实际出不同词条的概率。
 
 程序在一开始定义了两个参数：
 
