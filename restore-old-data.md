@@ -54,7 +54,7 @@
 
 在左侧选择您正在使用的网络接口（一般为 Wi-Fi），然后点击右下角的“高级…”按钮；
 
-![](https://raw.githubusercontent.com/applepi-icpc/qurious-filling-introduction/master/images/mac2.jpg)
+![](https://raw.githubusercontent.com/applepi-icpc/qurious-filling-introduction/master/images/mac2a.jpg)
 
 进入“代理”选项卡，在左侧分别选择 “网页代理 (HTTP)” 和 “安全网页代理 (HTTPS)” 选项，在左侧将它们勾选，并在右侧设置代理服务器为 `p.gamecat.fun:9000`，然后点击“好”；
 
