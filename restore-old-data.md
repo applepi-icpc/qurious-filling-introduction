@@ -12,19 +12,33 @@
 
 点击开始菜单，然后点击齿轮图标进入系统设置；
 
+![](https://raw.githubusercontent.com/applepi-icpc/qurious-filling-introduction/master/images/win1.jpg)
+
 在设置中，点击“网络和 Internet”；
 
+![](https://raw.githubusercontent.com/applepi-icpc/qurious-filling-introduction/master/images/win2.jpg)
+
 在左侧点击“代理”；在右侧打开“使用代理服务器”选项，在地址中填写 `p.gamecat.fun`，在端口中填写 `9000`，然后点击保存；
+
+![](https://raw.githubusercontent.com/applepi-icpc/qurious-filling-introduction/master/images/win3.jpg)
 
 打开您之前使用游猫网配装器的浏览器，在地址栏中输入 `http://gamecat.fun/httpisstupid`；
 
 **注意**，前缀的 `http://` 不能省略，更不能写成 `https://`；
 
+![](https://raw.githubusercontent.com/applepi-icpc/qurious-filling-introduction/master/images/win4.jpg)
+
 如果一切顺利，您将会打开我们的旧数据转移程序。浏览器会自动提示您下载压缩包；
+
+![](https://raw.githubusercontent.com/applepi-icpc/qurious-filling-introduction/master/images/win5.jpg)
 
 下载完成后，其中应当有 `favorite_sets.txt`，`talismans.txt` 和 `qurious_crafting.txt` 三个文件；
 
+![](https://raw.githubusercontent.com/applepi-icpc/qurious-filling-introduction/master/images/win6.jpg)
+
 重新按照上述步骤回到代理设置，关闭“使用代理服务器”选项；
+
+![](https://raw.githubusercontent.com/applepi-icpc/qurious-filling-introduction/master/images/win7.jpg)
 
 然后，您就可以打开游猫网配装器，在【配装收藏】，【护石列表】和【怪异炼化记录】中分别导入 `favorite_sets.txt` (**注意**，不是 `favorite_sets_raw.txt`)，`talismans.txt` 和 `qurious_crafting.txt` 三个文件了。
 
@@ -36,23 +50,43 @@
 
 进入“系统偏好设置”，然后点击“网络”；
 
+![](https://raw.githubusercontent.com/applepi-icpc/qurious-filling-introduction/master/images/mac1.jpg)
+
 在左侧选择您正在使用的网络接口（一般为 Wi-Fi），然后点击右下角的“高级…”按钮；
+
+![](https://raw.githubusercontent.com/applepi-icpc/qurious-filling-introduction/master/images/mac2.jpg)
 
 进入“代理”选项卡，在左侧分别选择 “网页代理 (HTTP)” 和 “安全网页代理 (HTTPS)” 选项，在左侧将它们勾选，并在右侧设置代理服务器为 `p.gamecat.fun:9000`，然后点击“好”；
 
 **注意**，两个选项右侧的代理设置都需要填；
 
+![](https://raw.githubusercontent.com/applepi-icpc/qurious-filling-introduction/master/images/mac3.jpg)
+
 点击右下角的“应用”；
+
+![](https://raw.githubusercontent.com/applepi-icpc/qurious-filling-introduction/master/images/mac4.jpg)
 
 打开您之前使用游猫网配装器的浏览器，在地址栏中输入 `http://gamecat.fun/httpisstupid`；
 
 **注意**，前缀的 `http://` 不能省略，更不能写成 `https://`；
 
+![](https://raw.githubusercontent.com/applepi-icpc/qurious-filling-introduction/master/images/mac5.jpg)
+
 如果一切顺利，您将会打开我们的旧数据转移程序。浏览器会自动提示您下载压缩包；
+
+![](https://raw.githubusercontent.com/applepi-icpc/qurious-filling-introduction/master/images/mac6.jpg)
 
 下载完成后，其中应当有 `favorite_sets.txt`，`talismans.txt` 和 `qurious_crafting.txt` 三个文件；
 
-重新按照上述步骤回到代理设置，取消勾选“网页代理 (HTTP)” 和 “安全网页代理 (HTTPS)”选项；
+![](https://raw.githubusercontent.com/applepi-icpc/qurious-filling-introduction/master/images/mac7.jpg)
+
+重新按照上述步骤回到代理设置，取消勾选“网页代理 (HTTP)” 和 “安全网页代理 (HTTPS)”选项，点击“好”；
+
+![](https://raw.githubusercontent.com/applepi-icpc/qurious-filling-introduction/master/images/mac8.jpg)
+
+然后点击右下角的“应用”，删除代理设置；
+
+![](https://raw.githubusercontent.com/applepi-icpc/qurious-filling-introduction/master/images/mac4.jpg)
 
 然后，您就可以打开游猫网配装器，在【配装收藏】，【护石列表】和【怪异炼化记录】中分别导入 `favorite_sets.txt` (**注意**，不是 `favorite_sets_raw.txt`)，`talismans.txt` 和 `qurious_crafting.txt` 三个文件了。
 
