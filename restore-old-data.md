@@ -30,6 +30,8 @@
 
 如果一切顺利，您将会打开我们的旧数据转移程序。浏览器会自动提示您下载压缩包；
 
+如果您使用 Chrome 浏览器，由于 Chrome 浏览器奇怪的缓存和强制 HTTPS 机制，您可能会遇到问题。您可以在这里查看解决方法；
+
 ![](https://raw.githubusercontent.com/applepi-icpc/qurious-filling-introduction/master/images/win5.jpg)
 
 下载完成后，其中应当有 `favorite_sets.txt`，`talismans.txt` 和 `qurious_crafting.txt` 三个文件；
@@ -74,6 +76,8 @@
 
 如果一切顺利，您将会打开我们的旧数据转移程序。浏览器会自动提示您下载压缩包；
 
+如果您使用 Chrome 浏览器，由于 Chrome 浏览器奇怪的缓存和强制 HTTPS 机制，您可能会遇到问题。您可以在这里查看解决方法；
+
 ![](https://raw.githubusercontent.com/applepi-icpc/qurious-filling-introduction/master/images/mac6.jpg)
 
 下载完成后，其中应当有 `favorite_sets.txt`，`talismans.txt` 和 `qurious_crafting.txt` 三个文件；
@@ -91,3 +95,29 @@
 然后，您就可以打开游猫网配装器，在【配装收藏】，【护石列表】和【怪异炼化记录】中分别导入 `favorite_sets.txt` (**注意**，不是 `favorite_sets_raw.txt`)，`talismans.txt` 和 `qurious_crafting.txt` 三个文件了。
 
 **注意**：导入将会覆盖您现有的记录。如果要合并两个记录，您需要点击“导入并合并”按钮。
+
+### 常见问题：Chrome 浏览器
+
+由于 Chrome 浏览器奇怪的缓存和强制 HTTPS 机制，您可能会遇到问题，浏览器提示“gamecat.fun 未发送任何数据”；
+
+![](https://raw.githubusercontent.com/applepi-icpc/qurious-filling-introduction/master/images/chrome1.jpg)
+
+这时，您可以点击地址栏右侧的三个点，打开菜单，选择“更多工具”子菜单，然后打开“开发者工具”；
+
+![](https://raw.githubusercontent.com/applepi-icpc/qurious-filling-introduction/master/images/chrome2.jpg)
+
+在开发者工具中，进入“Network”选项卡，勾选“Disable cache”选项；
+
+![](https://raw.githubusercontent.com/applepi-icpc/qurious-filling-introduction/master/images/chrome3.jpg)
+
+一些同学可能使用的是中文版的开发者工具，这时您可以进入“网络”选项卡，勾选“停用缓存”；
+
+![](https://raw.githubusercontent.com/applepi-icpc/qurious-filling-introduction/master/images/chrome4.jpg)
+
+然后，**保持开发者工具打开，不要关闭**，在地址栏中，将光标移动到最左边，把 `https` 改为 `http`；
+
+![](https://raw.githubusercontent.com/applepi-icpc/qurious-filling-introduction/master/images/chrome5.jpg)
+
+之后回车，您应该就可以进入旧数据转移程序了。如果仍有问题，可以尝试刷新一次；
+
+![](https://raw.githubusercontent.com/applepi-icpc/qurious-filling-introduction/master/images/chrome6.jpg)
