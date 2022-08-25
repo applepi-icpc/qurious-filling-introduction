@@ -102,7 +102,17 @@
 
 ![](https://raw.githubusercontent.com/applepi-icpc/qurious-filling-introduction/master/images/chrome1.jpg)
 
-这时，您可以点击地址栏右侧的三个点，打开菜单，选择“更多工具”子菜单，然后打开“开发者工具”；
+首先，先在地址栏中输入 `chrome://settings/system`，进入 Chrome 的系统设置；
+
+如果您看到“Chrome 使用的是由某款扩展程序指定的代理设置”，您需要首先停用或者删除这款扩展程序；
+
+![](https://raw.githubusercontent.com/applepi-icpc/qurious-filling-introduction/master/images/chrome7.jpg)
+
+如果您看到“打开您计算机的代理设置”（或者，在停用/删除扩展程序后看到这行字），那么就没有问题，可以进行下一步了；
+
+![](https://raw.githubusercontent.com/applepi-icpc/qurious-filling-introduction/master/images/chrome8.jpg)
+
+接下来，您可以点击地址栏右侧的三个点，打开菜单，选择“更多工具”子菜单，然后打开“开发者工具”；
 
 ![](https://raw.githubusercontent.com/applepi-icpc/qurious-filling-introduction/master/images/chrome2.jpg)
 
