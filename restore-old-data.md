@@ -30,7 +30,7 @@
 
 如果一切顺利，您将会打开我们的旧数据转移程序。浏览器会自动提示您下载压缩包；
 
-如果您使用 Chrome 浏览器，由于 Chrome 浏览器奇怪的缓存和强制 HTTPS 机制，您可能会遇到问题。您可以在这里查看解决方法；
+如果您使用 Chrome 浏览器，由于 Chrome 浏览器奇怪的缓存和强制 HTTPS 机制，您可能会遇到问题。您可以在[这里](#常见问题chrome-浏览器)查看解决方法；
 
 ![](https://raw.githubusercontent.com/applepi-icpc/qurious-filling-introduction/master/images/win5.jpg)
 
@@ -76,7 +76,7 @@
 
 如果一切顺利，您将会打开我们的旧数据转移程序。浏览器会自动提示您下载压缩包；
 
-如果您使用 Chrome 浏览器，由于 Chrome 浏览器奇怪的缓存和强制 HTTPS 机制，您可能会遇到问题。您可以在这里查看解决方法；
+如果您使用 Chrome 浏览器，由于 Chrome 浏览器奇怪的缓存和强制 HTTPS 机制，您可能会遇到问题。您可以在[这里](#常见问题chrome-浏览器)查看解决方法；
 
 ![](https://raw.githubusercontent.com/applepi-icpc/qurious-filling-introduction/master/images/mac6.jpg)
 
