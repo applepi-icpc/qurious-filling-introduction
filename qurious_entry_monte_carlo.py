@@ -2,10 +2,16 @@ import typing as T
 import random
 from tqdm import tqdm
 from tabulate import tabulate
+from multiprocessing import Pool
+import functools
 
 # Parameters
-MONTE_CARLO_LOOPS = 5000000
-CONSIDER_DROP_SKILL = True
+N_MONTE_CARLO_LOOP = 100000000
+FLAG_CONSIDER_DROP_SKILL = True
+
+N_PROCESS = 6
+N_IMAP_CHUNK_SIZE = 1
+N_PART_SIZE = 10000
 
 _NOTHING = -1
 _DROP_SKILL = -2
@@ -19,8 +25,8 @@ _DECO_2 = 6
 _DECO_3 = 7
 _DECO_4 = 8
 
-WORDS = ['SKILL_1', 'SKILL_2', 'SKILL_3', 'SKILL_4', 'SKILL_5', 'DECO_1', 'DECO_2', 'DECO_3', 'DECO_4+']
-MULS = [1/32, 1/26, 1/18, 1/13, 1/12, 1, 1, 1, 1]
+ARR_WORDS = ['SKILL_1', 'SKILL_2', 'SKILL_3', 'SKILL_4', 'SKILL_5', 'DECO_1', 'DECO_2', 'DECO_3', 'DECO_4+']
+ARR_MULS = [1/32, 1/26, 1/18, 1/13, 1/12, 1, 1, 1, 1]
 
 ENTRIES_1 = [
     # EFFECT, COST, PROBABILITY * 1000
@@ -203,42 +209,62 @@ def single_emu(cost, entries):
     
     return ret
 
+def proc_emu_result(ret):
+    cur = [0] * len(ARR_WORDS)
+    deco = 0
+    for entry in ret:
+        if entry[0] == _DECO_1:
+            deco += 1
+        elif entry[0] == _DECO_2:
+            deco += 2
+        elif entry[0] == _DECO_3:
+            deco += 3
+        elif entry[0] == _DROP_SKILL:
+            if FLAG_CONSIDER_DROP_SKILL:
+                # give up
+                return [0] * len(ARR_WORDS)
+        elif entry[0] != _NOTHING:
+            cur[entry[0]] = 1
+    if deco == 1:
+        cur[_DECO_1] = 1
+    elif deco == 2:
+        cur[_DECO_2] = 1
+    elif deco == 3:
+        cur[_DECO_3] = 1
+    elif deco >= 4:
+        cur[_DECO_4] = 1
+    return cur
+
+
+def _do(start_cost, entries, _):
+    length = len(ARR_WORDS)
+    s = [0] * length
+    for _ in range(N_PART_SIZE):
+        ret = single_emu(start_cost, entries)
+        cur = proc_emu_result(ret)
+        for k in range(length):
+            s[k] += cur[k]
+    return s
+
 def main():
-    title = ['COST'] + WORDS
+    title = ['COST'] + ARR_WORDS
     content = []
 
     for (entries, start_cost) in zip(ENTRIES, START_COSTS):
-        count = [0] * len(WORDS)
-        for _ in tqdm(range(MONTE_CARLO_LOOPS)):
-            ret = single_emu(start_cost, entries)
-            cur = [0] * len(WORDS)
-            deco = 0
-            ok = True
-            for entry in ret:
-                if entry[0] == _DECO_1:
-                    deco += 1
-                elif entry[0] == _DECO_2:
-                    deco += 2
-                elif entry[0] == _DECO_3:
-                    deco += 3
-                elif entry[0] == _DROP_SKILL:
-                    if CONSIDER_DROP_SKILL:
-                        ok = False
-                elif entry[0] != _NOTHING:
-                    cur[entry[0]] = 1
-            if not ok:
-                continue
-            if deco == 1:
-                cur[_DECO_1] = 1
-            elif deco == 2:
-                cur[_DECO_2] = 1
-            elif deco == 3:
-                cur[_DECO_3] = 1
-            elif deco >= 4:
-                cur[_DECO_4] = 1
-            for i in range(len(WORDS)):
-                count[i] += cur[i]
-        row = [start_cost] + ["{:.3f} %".format(count[i] / MONTE_CARLO_LOOPS * 100 * MULS[i]) for i in range(len(WORDS))]
+        arr_size = (N_MONTE_CARLO_LOOP + N_PART_SIZE - 1) // N_PART_SIZE
+        actual_attempts = arr_size * N_PART_SIZE
+
+        with Pool(N_PROCESS) as pool:
+            curs = list(
+                tqdm(pool.imap_unordered(
+                    functools.partial(_do, start_cost, entries), 
+                    range(arr_size), chunksize=N_IMAP_CHUNK_SIZE), 
+                total=arr_size))
+
+        count = functools.reduce(
+            lambda arr1, arr2: [x + y for (x, y) in zip(arr1, arr2)], curs)
+
+        row = [start_cost] + ["{:.6f} % ({})".format(count[i] / actual_attempts * 100 * ARR_MULS[i], count[i]) for i in range(len(ARR_WORDS))]
         content.append(row)
     
     print(tabulate(content, title, "github"))
